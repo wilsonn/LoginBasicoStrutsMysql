@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+
+  <!-- ========== Definiciones de Form Bean =================== -->
+  <form-beans>
+
+    <form-bean      name="loginForm"
+                    type="pe.com.whnm.miproyectostruts1.form.LoginForm"/>
+
+  </form-beans>
+
+
+
+
+
+
+  <!-- ==========Forward's  Globales ============================== -->
+  <global-forwards>
+
+<!--      <forward   name="exito"           path="/beanstruts/principal.jsp"/> -->
+<!--      <forward   name="rechazo"         path="/beanstruts/error.jsp"/> -->
+
+  </global-forwards>
+
+
+
+ 
+
+  <!-- ========== Mapeo de Acciones ============================== -->
+
+  <action-mappings>
+
+
+    <action    path="/validateLogin"
+               type="pe.com.whnm.miproyectostruts1.action.LoginAction"
+               input="/"
+               name="loginForm">
+    
+    	<forward name="success" path="/principal.jsp"></forward>
+    	<forward name="error" path="/login.jsp"></forward>
+    	
+    </action>
+
+	<action    path="/index"
+               forward="/login.jsp"></action>
+  </action-mappings>
+
+
+
+
+
+  <!-- ========== Controller Configuration ======================== -->
+
+<!--   <controller> -->
+<!--     <set-property property="inputForward" value="true"/> -->
+<!--   </controller> -->
+
+
+ 
+
+  <!-- ========== Message Resources Definitions ==================== -->
+
+<!--   <message-resources -->
+<!--     parameter="com.osmosislatina.struts.ApplicationResources"/> -->
+
+
+
+
+</struts-config>
